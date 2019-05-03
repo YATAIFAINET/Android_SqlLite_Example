@@ -1,13 +1,11 @@
 package stan.store.demo.Model;
 
 import android.app.Activity;
-import android.content.Context;
 import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import stan.store.demo.Controller.IndexActivity;
 import stan.store.demo.GCMD.GCMD;
 import stan.store.demo.Helper.SQLiteHelper;
 
@@ -19,15 +17,6 @@ public class Product {
 
     //Product的資料
     public ArrayList<HashMap<String,String>> mArrayList_ProductData = new ArrayList<HashMap<String, String>>();
-    private HashMap<String,String> mHashMap_Data;
-
-    public Product () {
-        mArrayList_ProductData.clear();
-    }
-
-    public void Set_Product (HashMap<String,String> tmpMap){
-        mHashMap_Data = tmpMap;
-    }
 
     public void Check_Product_Name (Activity tmp) {
         mArrayList_ProductData = new SQLiteHelper(tmp).getAll(new GCMD().mTable_Type.Product);
@@ -39,16 +28,16 @@ public class Product {
         }
     }
 
-    public String getID(){
-        return mHashMap_Data.get(ID);
+    public String getID(int position){
+        return mArrayList_ProductData.get(position).get(ID);
     }
 
-    public String getName(){
-        return mHashMap_Data.get(NAME);
+    public String getName(int position){
+        return mArrayList_ProductData.get(position).get(NAME);
     }
 
-    public String getPrice(){
-        return mHashMap_Data.get(PRICE);
+    public String getPrice(int position){
+        return mArrayList_ProductData.get(position).get(PRICE);
     }
 
 }

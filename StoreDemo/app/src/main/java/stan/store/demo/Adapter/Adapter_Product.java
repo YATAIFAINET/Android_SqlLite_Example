@@ -20,11 +20,11 @@ import stan.store.demo.R;
 
 public class Adapter_Product extends RecyclerView.Adapter<Adapter_Product.ViewHolder> {
     private Context mContext;
-    private ArrayList<Product> mArrayList_Product;
+    private Product mProduct;
 
-    public Adapter_Product(Context context, ArrayList<Product> list) {
+    public Adapter_Product(Context context, Product Source_Struct) {
         this.mContext = context;
-        this.mArrayList_Product = list;
+        this.mProduct = Source_Struct;
     }
 
     @Override
@@ -47,14 +47,13 @@ public class Adapter_Product extends RecyclerView.Adapter<Adapter_Product.ViewHo
                 
             }
         });
-        holder.mTextView_ProductName.setText(mArrayList_Product.get(position).getName());
-        holder.mTextView_ProductPrice.setText("$" + mArrayList_Product.get(position).getPrice());
+        holder.mTextView_ProductName.setText(mProduct.getName(position));
+        holder.mTextView_ProductPrice.setText("$" + mProduct.getPrice(position));
     }
-
 
     @Override
     public int getItemCount() {
-        return mArrayList_Product.size();
+        return mProduct.mArrayList_ProductData.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

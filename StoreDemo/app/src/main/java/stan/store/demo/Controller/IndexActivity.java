@@ -25,9 +25,6 @@ public class IndexActivity extends AppCompatActivity {
     //DataBase
     private SQLiteHelper mDBHelper ;
 
-    //Parse
-    private ArrayList<Product> mArrayList_ProductModel = new ArrayList<Product>();
-
     //Model
     private GCMD mGCMD_LIB = new GCMD();
     private Product mProduct = new Product();
@@ -43,13 +40,9 @@ public class IndexActivity extends AppCompatActivity {
 
         //先拿到產品資料
         mProduct.mArrayList_ProductData = mDBHelper.getAll(mGCMD_LIB.mTable_Type.Product);
-        for (int i = 0 ; i < mProduct.mArrayList_ProductData.size() ; i++) {
-            mProduct.Set_Product(mProduct.mArrayList_ProductData.get(i));
-            mArrayList_ProductModel.add(mProduct);
-        }
 
         //設定Adapter + RecyclerView
-        mAdapter_Product = new Adapter_Product(IndexActivity.this, mArrayList_ProductModel);
+        mAdapter_Product = new Adapter_Product(IndexActivity.this,mProduct);
         mRecyclerView_Product.setLayoutManager(new LinearLayoutManager(IndexActivity.this));
         mRecyclerView_Product.setAdapter(mAdapter_Product);
 
