@@ -10,10 +10,13 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import stan.store.demo.GCMD.GCMD;
+
 public class SQLiteHelper {
     final String db_name="store_demo";    // 資料庫名稱
     private Activity mActivity;
     private SQLiteDatabase db;    //資料庫
+    private GCMD mGCMD_LIB = new GCMD();
 
     public SQLiteHelper(Activity ac) {
         mActivity = ac;
@@ -22,18 +25,20 @@ public class SQLiteHelper {
         //Create User's Table
         String SQL_UserTable =
                 "CREATE TABLE IF NOT EXISTS " +
-                "user" +            // 資料表名稱
+                 mGCMD_LIB.mTable_Type.User +            // 資料表名稱
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +    //主鍵(唯一識別)
+                "account VARCHAR(50), " +
+                "password VARCHAR(50), "+
                 "name VARCHAR(50), " +    //姓名欄位
                 "phone VARCHAR(50), " +    //電話欄位
-                "password VARCHAR(50))";    //密碼欄位
+                "email VARCHAR(50)) ";    //密碼欄位
         db.execSQL(SQL_UserTable);    // 建立資料表
 
 
         //Create Product's Table
         String SQL_Product_Table =
                 "CREATE TABLE IF NOT EXISTS " +
-                        "product" +            // 資料表名稱
+                        mGCMD_LIB.mTable_Type.Product +            // 資料表名稱
                         "(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +    //主鍵(唯一識別)
                         "name VARCHAR(50), " +    //產品名稱
                         "price VARCHAR(50))";    //產品價格
@@ -100,8 +105,13 @@ public class SQLiteHelper {
         for (String key : DataMap.keySet()) {
             ContentVal.put(key, DataMap.get(key));
         }
-        db.insert(TableName, null, ContentVal);
-        return true;
+        long tmp  = db.insert(TableName, null, ContentVal);
+
+        if(tmp != -1){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean update (String TableName, HashMap<String,String> DataMap, String WhereID) {

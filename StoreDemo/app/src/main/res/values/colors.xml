@@ -7,4 +7,8 @@
 
     <color name="Background_Normal">#aa0000</color>
     <color name="Background_White">#FFFFFF</color>
+    <color name="Background_Register">#f9f9f9</color>
+
+
+    <color name="Public_Text_Color">#515c6f</color>
 </resources>

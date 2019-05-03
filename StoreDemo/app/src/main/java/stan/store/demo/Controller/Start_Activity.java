@@ -26,19 +26,6 @@ public class Start_Activity extends AppCompatActivity {
         InitSetting();
 
     }
-    //-------------------------------------------------
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(mGCMD_LIB.TAG,this.getClass().getSimpleName()+"：OnResume");
-    }
-
-    //------------------------------------------------
-     @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d(mGCMD_LIB.TAG,this.getClass().getSimpleName()+"：onPause");
-    }
 
     //------------------------------------------------------------
 
@@ -57,5 +44,6 @@ public class Start_Activity extends AppCompatActivity {
             }
         }, mGCMD_LIB.SPLASH_TIME_OUT);
     }
+
 }
 

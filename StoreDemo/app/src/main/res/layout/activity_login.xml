@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:text="會員登入"
-                android:textColor="#515c6f" />
+                android:textColor="@color/Public_Text_Color" />
 
         </LinearLayout>
 
@@ -87,7 +87,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
                     android:padding="8dp"
-                    android:textColor="#515c6f"
+                    android:textColor="@color/Public_Text_Color"
                     android:textSize="15dp"
                     android:hint="請輸入帳號"
                     android:inputType="textEmailAddress"/>
@@ -111,10 +111,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
                     android:padding="8dp"
-                    android:textColor="#515c6f"
+                    android:textColor="@color/Public_Text_Color"
                     android:textSize="15dp"
                     android:hint="請輸入密碼"
-                    android:inputType="textEmailAddress"/>
+                    android:inputType="textPassword"/>
             </LinearLayout>
 
         </LinearLayout>

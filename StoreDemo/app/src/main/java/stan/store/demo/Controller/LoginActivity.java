@@ -12,7 +12,6 @@ import android.widget.Toast;
 import java.util.HashMap;
 
 import stan.store.demo.GCMD.GCMD;
-import stan.store.demo.Helper.Global;
 import stan.store.demo.Helper.SQLiteHelper;
 import stan.store.demo.Model.Product;
 import stan.store.demo.Model.User;
@@ -30,6 +29,7 @@ public class LoginActivity extends AppCompatActivity  {
 
     //DataBase
     private SQLiteHelper mDBHelper ;
+    private User mUser = new User();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity  {
 
     private void InitSetting () {
         Log.d(mGCMD_LIB.TAG,"InitSetting");
-
+        mUser.Set_User_Data_Clear();
         mDBHelper = new SQLiteHelper(LoginActivity.this);
 
         //InitUI
@@ -65,10 +65,10 @@ public class LoginActivity extends AppCompatActivity  {
                 }
 
                 //Step2 驗證資料正確性
-                String Check_SQL = "SELECT * FROM "+mGCMD_LIB.mTable_Type.User+ " WHERE id = " + account + " AND password = " + password;
+                String Check_SQL = "SELECT * FROM "+mGCMD_LIB.mTable_Type.User+ " WHERE account = '" + account + "' AND password = '" + password +"'";
                 if (mDBHelper.QuerySQL(Check_SQL).size() > 0) {
-                    Global.UserData = new User(mDBHelper.QuerySQL(Check_SQL).get(0));
-                    Toast.makeText(LoginActivity.this,Global.UserData.getName() + " 您好，登入成功", Toast.LENGTH_SHORT).show();
+                    mUser.Set_User_Data(mDBHelper.QuerySQL(Check_SQL).get(0));
+                    Toast.makeText(LoginActivity.this,mUser.getName() + " 您好，登入成功", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent();
                     intent.setClass(LoginActivity.this, IndexActivity.class);
                     startActivity(intent);
