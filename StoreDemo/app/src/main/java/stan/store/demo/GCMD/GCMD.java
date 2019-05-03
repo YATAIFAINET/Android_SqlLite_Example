@@ -46,6 +46,7 @@ public class GCMD {
                 statusBarView.setLayoutParams(params);
                 statusBarView.setBackgroundColor(Acttmp.getResources().getColor(R.color.Status_Bar));
                 decorViewGroup.addView(statusBarView);
+
             }
         }
     }

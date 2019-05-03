@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -87,7 +89,7 @@ public class LoginActivity extends AppCompatActivity  {
                     Intent intent = new Intent();
                     intent.setClass(LoginActivity.this, IndexActivity.class);
                     startActivity(intent);
-                    finish();
+                    finishAffinity();
                 } else {
                     Toast.makeText(LoginActivity.this,"帳號密碼有誤", Toast.LENGTH_SHORT).show();
                 }
