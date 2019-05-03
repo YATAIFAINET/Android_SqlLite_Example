@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import stan.store.demo.Adapter.Adapter_Product;
+import stan.store.demo.GCMD.GCMD;
 import stan.store.demo.Helper.SQLiteHelper;
 import stan.store.demo.Model.Product;
 import stan.store.demo.R;
@@ -24,13 +25,9 @@ public class IndexActivity extends AppCompatActivity {
     //DataBase
     private SQLiteHelper mDBHelper ;
 
-    //Parse
-    private ArrayList<HashMap<String,String>> mArrayList_ProductData;
-    private ArrayList<Product> mArrayList_ProductModel = new ArrayList<Product>();
-
     //Model
-    private Product mProduct;
-
+    private GCMD mGCMD_LIB = new GCMD();
+    private Product mProduct = new Product();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,14 +39,10 @@ public class IndexActivity extends AppCompatActivity {
         mRecyclerView_Product = (RecyclerView) findViewById(R.id.RecyclerView_Product);
 
         //先拿到產品資料
-        mArrayList_ProductData = mDBHelper.getAll("product");
-        for (int i = 0 ; i < mArrayList_ProductData.size() ; i++) {
-            mProduct = new Product(mArrayList_ProductData.get(i));
-            mArrayList_ProductModel.add(mProduct);
-        }
+        mProduct.mArrayList_ProductData = mDBHelper.getAll(mGCMD_LIB.mTable_Type.Product);
 
         //設定Adapter + RecyclerView
-        mAdapter_Product = new Adapter_Product(IndexActivity.this, mArrayList_ProductModel);
+        mAdapter_Product = new Adapter_Product(IndexActivity.this,mProduct);
         mRecyclerView_Product.setLayoutManager(new LinearLayoutManager(IndexActivity.this));
         mRecyclerView_Product.setAdapter(mAdapter_Product);
 

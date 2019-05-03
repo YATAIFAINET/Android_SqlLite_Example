@@ -1,6 +1,13 @@
 package stan.store.demo.Model;
 
+import android.app.Activity;
+import android.util.Log;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+
+import stan.store.demo.GCMD.GCMD;
+import stan.store.demo.Helper.SQLiteHelper;
 
 public class Product {
     // 定義 ColumnName
@@ -9,21 +16,28 @@ public class Product {
     final String PRICE = "price";
 
     //Product的資料
-    private HashMap<String,String> mHashMap_Data;
+    public ArrayList<HashMap<String,String>> mArrayList_ProductData = new ArrayList<HashMap<String, String>>();
 
-    public Product (HashMap<String,String> tmpMap) {
-        mHashMap_Data = tmpMap;
+    public void Check_Product_Name (Activity tmp) {
+        mArrayList_ProductData = new SQLiteHelper(tmp).getAll(new GCMD().mTable_Type.Product);
+
+        for (int i = 0 ; i<mArrayList_ProductData.size();i++){
+            Log.d(GCMD.TAG,mArrayList_ProductData.get(i).get(ID));
+            Log.d(GCMD.TAG,mArrayList_ProductData.get(i).get(NAME));
+            Log.d(GCMD.TAG,mArrayList_ProductData.get(i).get(PRICE));
+        }
     }
 
-    public String getID(){
-        return mHashMap_Data.get(ID);
+    public String getID(int position){
+        return mArrayList_ProductData.get(position).get(ID);
     }
 
-    public String getName(){
-        return mHashMap_Data.get(NAME);
+    public String getName(int position){
+        return mArrayList_ProductData.get(position).get(NAME);
     }
 
-    public String getPrice(){
-        return mHashMap_Data.get(PRICE);
+    public String getPrice(int position){
+        return mArrayList_ProductData.get(position).get(PRICE);
     }
+
 }
