@@ -4,53 +4,113 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
 
-    <FrameLayout
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginBottom="10dp">
+    android:weightSum="1">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/product" />
-    </FrameLayout>
+    <View
+        android:layout_width="20dp"
+        android:layout_height="match_parent">
+    </View>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="10dp"
-        android:orientation="vertical">
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:weightSum="1">
 
-        <TextView
-            android:id="@+id/textView_ProductName"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp">
+
+        </View>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:text="Title"
-            android:textSize="20dp" />
+            android:background="@color/Background_White"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/textView_ProductPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:text="Price"
-            android:textSize="20dp" />
+            <FrameLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:layout_marginBottom="10dp">
 
-        <Button
-            android:id="@+id/button_AddCart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="加入購物車" />
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/products1" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="10">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="8.4"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView_ProductName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="Title"
+                        android:textColor="@color/Public_Text_Color"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/textView_ProductPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="Price"
+                        android:textColor="@color/Background_Normal"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/textView_ProductExplain"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="Explain"
+                        android:textColor="@color/Public_Text_Color"
+                        android:textSize="10dp" />
+                </LinearLayout>
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.6"
+                    android:background="@color/Main_index_cart_Color">
+
+                    <ImageView
+                        android:id="@+id/button_AddCart"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:scaleType="fitCenter"
+                        android:layout_gravity="center"
+                        android:background="@drawable/icon_cart"/>
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
+
+    <View
+        android:layout_width="20dp"
+        android:layout_height="match_parent">
+
+    </View>
 
 </LinearLayout>

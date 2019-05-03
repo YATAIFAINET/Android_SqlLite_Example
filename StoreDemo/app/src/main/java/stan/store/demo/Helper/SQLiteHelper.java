@@ -40,7 +40,8 @@ public class SQLiteHelper {
                 "CREATE TABLE IF NOT EXISTS " +
                         mGCMD_LIB.mTable_Type.Product +            // 資料表名稱
                         "(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +    //主鍵(唯一識別)
-                        "name VARCHAR(50), " +    //產品名稱
+                        "name VARCHAR(50), " +   //產品名稱
+                        "expl VARCHAR(150), " +   //產品說明
                         "price VARCHAR(50))";    //產品價格
         db.execSQL(SQL_Product_Table);    // 建立資料表
 

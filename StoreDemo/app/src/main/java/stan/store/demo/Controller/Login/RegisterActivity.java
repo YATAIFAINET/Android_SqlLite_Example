@@ -1,4 +1,4 @@
-package stan.store.demo.Controller;
+package stan.store.demo.Controller.Login;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.HashMap;
@@ -33,7 +32,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mGCMD_LIB.SetActionBar(this);
         setContentView(R.layout.activity_main);
+        mGCMD_LIB.SetActionBar_Status(this);
         InitSetting();
 
     }

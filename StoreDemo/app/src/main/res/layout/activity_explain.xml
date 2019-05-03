@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/Background_Normal"
+    tools:context=".Controller.Login.RegisterActivity"
+    android:weightSum="10">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/Background_White">
+
+        <LinearLayout
+
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="35dp">
+            <ImageView
+                android:id="@+id/Explain_Back_Arrow"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:clickable="true"
+                android:scaleType="fitCenter"
+                android:layout_gravity="left|center_vertical"
+                android:background="@drawable/icon_arrow_left" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="7dp"
+                android:background="@drawable/icon_edit"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:textColor="@color/Background_Normal"
+                android:text="註冊"
+                android:textSize="15dp"
+                android:layout_gravity="center" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="注意事項 Coming Soon.."
+        android:textSize="50dp"
+        android:textColor="@color/Background_White"/>
+
+</LinearLayout>

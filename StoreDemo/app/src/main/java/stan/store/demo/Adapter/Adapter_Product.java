@@ -34,7 +34,8 @@ public class Adapter_Product extends RecyclerView.Adapter<Adapter_Product.ViewHo
         ViewHolder holder = new ViewHolder(view);
         holder.mTextView_ProductName = (TextView) view.findViewById(R.id.textView_ProductName);
         holder.mTextView_ProductPrice = (TextView) view.findViewById(R.id.textView_ProductPrice);
-        holder.mButton_AddCart = (Button) view.findViewById(R.id.button_AddCart);
+        holder.mtextView_ProductExplain = (TextView)view.findViewById(R.id.textView_ProductExplain);
+        holder.mButton_AddCart = (ImageView) view.findViewById(R.id.button_AddCart);
         return holder;
     }
 
@@ -49,6 +50,7 @@ public class Adapter_Product extends RecyclerView.Adapter<Adapter_Product.ViewHo
         });
         holder.mTextView_ProductName.setText(mProduct.getName(position));
         holder.mTextView_ProductPrice.setText("$" + mProduct.getPrice(position));
+        holder.mtextView_ProductExplain.setText(mProduct.getExplain(position));
     }
 
     @Override
@@ -59,7 +61,8 @@ public class Adapter_Product extends RecyclerView.Adapter<Adapter_Product.ViewHo
     class ViewHolder extends RecyclerView.ViewHolder {
         public TextView mTextView_ProductName;
         public TextView mTextView_ProductPrice;
-        public Button mButton_AddCart;
+        public TextView mtextView_ProductExplain;
+        public ImageView mButton_AddCart;
 
         public ViewHolder(View itemView) {
             super(itemView);

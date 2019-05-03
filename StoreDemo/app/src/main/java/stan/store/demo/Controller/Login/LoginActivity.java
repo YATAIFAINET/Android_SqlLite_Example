@@ -1,4 +1,4 @@
-package stan.store.demo.Controller;
+package stan.store.demo.Controller.Login;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,10 +7,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.HashMap;
 
+import stan.store.demo.Controller.Main.IndexActivity;
 import stan.store.demo.GCMD.GCMD;
 import stan.store.demo.Helper.SQLiteHelper;
 import stan.store.demo.Model.Product;
@@ -26,6 +28,7 @@ public class LoginActivity extends AppCompatActivity  {
     private EditText mEditText_Password;
     private Button mButton_Login;
     private Button mButton_Regitster;
+    private TextView mLogin_Explain;
 
     //DataBase
     private SQLiteHelper mDBHelper ;
@@ -34,7 +37,9 @@ public class LoginActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mGCMD_LIB.SetActionBar(this);
         setContentView(R.layout.activity_login);
+        mGCMD_LIB.SetActionBar_Status(this);
         InitSetting();
     }
 
@@ -44,12 +49,22 @@ public class LoginActivity extends AppCompatActivity  {
         mDBHelper = new SQLiteHelper(LoginActivity.this);
 
         //InitUI
+        mLogin_Explain = (TextView) findViewById(R.id.Login_Explain);
         mEditText_Account = (EditText) findViewById(R.id.editText_Account);
         mEditText_Password = (EditText) findViewById(R.id.editText_Password);
         mButton_Login = (Button) findViewById(R.id.button_Login);
         mButton_Regitster = (Button) findViewById(R.id.button_Register);
 
         Add_Product_Init();
+
+        mLogin_Explain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(LoginActivity.this, Explain_Activity.class);
+                startActivity(intent);
+            }
+        });
 
         //Click Event
         mButton_Login.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +115,7 @@ public class LoginActivity extends AppCompatActivity  {
                 HashMap<String,String> tmpMap = new HashMap<String,String>();
                 tmpMap.put("name", "產品名稱" + i);
                 tmpMap.put("price", String.valueOf(100 * i));
+                tmpMap.put("expl","產品名稱1的產品附說明+"+String.valueOf(i*100));
                 mDBHelper.addData(mGCMD_LIB.mTable_Type.Product, tmpMap);
             }
             Toast.makeText(LoginActivity.this,"新增成功", Toast.LENGTH_SHORT).show();

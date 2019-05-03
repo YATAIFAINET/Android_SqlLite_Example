@@ -1,13 +1,9 @@
-package stan.store.demo.Controller;
+package stan.store.demo.Controller.Main;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 import stan.store.demo.Adapter.Adapter_Product;
 import stan.store.demo.GCMD.GCMD;
@@ -32,7 +28,10 @@ public class IndexActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mGCMD_LIB.SetActionBar(this);
         setContentView(R.layout.activity_index);
+        mGCMD_LIB.SetActionBar_Status(this);
+
         mDBHelper = new SQLiteHelper(IndexActivity.this);
 
         //元件定義

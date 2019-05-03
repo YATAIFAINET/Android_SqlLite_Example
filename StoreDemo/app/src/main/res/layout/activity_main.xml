@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/Background_Normal"
-    tools:context=".Controller.RegisterActivity"
+    tools:context=".Controller.Login.RegisterActivity"
     android:weightSum="10">
 
     <FrameLayout

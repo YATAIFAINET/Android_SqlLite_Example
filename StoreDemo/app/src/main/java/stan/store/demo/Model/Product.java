@@ -14,6 +14,7 @@ public class Product {
     final String ID = "id";
     final String NAME = "name";
     final String PRICE = "price";
+    final String Explain = "expl";
 
     //Product的資料
     public ArrayList<HashMap<String,String>> mArrayList_ProductData = new ArrayList<HashMap<String, String>>();
@@ -38,6 +39,9 @@ public class Product {
 
     public String getPrice(int position){
         return mArrayList_ProductData.get(position).get(PRICE);
+    }
+    public String getExplain(int position){
+        return mArrayList_ProductData.get(position).get(Explain);
     }
 
 }

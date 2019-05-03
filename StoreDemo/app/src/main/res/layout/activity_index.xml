@@ -5,10 +5,128 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Controller.IndexActivity">
+    android:weightSum="10"
+    android:background="@color/Background_Normal"
+    tools:context=".Controller.Main.IndexActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/Background_White">
+
+        <LinearLayout
+
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="35dp">
+            <ImageView
+                android:id="@+id/Register_Back_Arrow"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:clickable="true"
+                android:scaleType="fitCenter"
+                android:layout_gravity="left|center_vertical"
+                android:background="@drawable/icon_arrow_left" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="7dp"
+                android:background="@drawable/icon_edit"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:textColor="@color/Background_Normal"
+                android:text="註冊"
+                android:textSize="15dp"
+                android:layout_gravity="center" />
+        </LinearLayout>
+    </FrameLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/RecyclerView_Product"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        android:layout_weight="9"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:background="@color/Background_White"
+        android:layout_weight="1"
+        android:weightSum="3">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:weightSum="1"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/icon_list"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textSize="12dp"
+                    android:gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/Background_Normal"
+                    android:text="商品列表"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:weightSum="1"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/icon_cart_gray"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textSize="12dp"
+                    android:gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/Icon_Un_Select_Color"
+                    android:text="購物車"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:weightSum="1"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/icon_user_gray"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textSize="12dp"
+                    android:gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/Icon_Un_Select_Color"
+                    android:text="會員專區"/>
+            </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

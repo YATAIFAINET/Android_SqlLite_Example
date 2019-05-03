@@ -1,4 +1,4 @@
-package stan.store.demo.Controller;
+package stan.store.demo.Controller.Login;
 
 
 import android.content.Intent;
