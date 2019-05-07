@@ -7,8 +7,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+
 import android.widget.Toast;
 
 import java.util.HashMap;
@@ -43,12 +42,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         mDBHelper = new SQLiteHelper(RegisterActivity.this);
         mUser.Check_Data(mDBHelper);
 
-        mRegister_EditText_Password = (EditText) findViewById(R.id.editText_Password);
-        mRegister_EditText_Name = (EditText) findViewById(R.id.editText_Name);
-        mRegister_EditText_Phone = (EditText) findViewById(R.id.editText_Phone);
+        mRegister_EditText_Password = (EditText) findViewById(R.id.Text_Password);
+        mRegister_EditText_Name = (EditText) findViewById(R.id.Text_Name);
+        mRegister_EditText_Phone = (EditText) findViewById(R.id.Text_Phone);
 
 
-        mRegister_Button_Register = (Button) findViewById(R.id.button_Register);
+        mRegister_Button_Register = (Button) findViewById(R.id.Register_Btn);
         mRegister_Button_Register.setOnClickListener(this);
     }
 
