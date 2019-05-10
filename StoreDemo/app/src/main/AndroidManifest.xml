@@ -21,9 +21,20 @@
         <activity android:name=".Controller.Login.LoginActivity"></activity>
         <activity android:name=".Controller.Login.Explain_Activity"></activity>
 
+
         <activity android:name=".Controller.Login.RegisterActivity"
                   android:windowSoftInputMode="adjustPan"
                   android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name=".Controller.Main.Member.Fix_PassWordActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name=".Controller.Main.Member.Fix_DataActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
