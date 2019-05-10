@@ -43,7 +43,6 @@ public class Explain_Activity extends AppCompatActivity implements View.OnClickL
     }
     //------------------------------------------------------------
 
-
     @Override
     public void onClick(View v) {
         switch (v.getId()){

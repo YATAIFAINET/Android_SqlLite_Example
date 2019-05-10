@@ -16,9 +16,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".Controller.Main.IndexActivity"></activity>
+        <activity android:name=".Controller.Main.CartActivity"></activity>
+        <activity android:name=".Controller.Main.MemberActivity"></activity>
         <activity android:name=".Controller.Login.LoginActivity"></activity>
         <activity android:name=".Controller.Login.Explain_Activity"></activity>
-        <activity android:name=".Controller.Login.RegisterActivity"></activity>
+
+        <activity android:name=".Controller.Login.RegisterActivity"
+                  android:windowSoftInputMode="adjustPan"
+                  android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

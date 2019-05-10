@@ -2,6 +2,7 @@ package stan.store.demo.GCMD;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Build;
 import android.view.Gravity;
@@ -11,6 +12,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
+import stan.store.demo.Controller.Main.CartActivity;
+import stan.store.demo.Controller.Main.IndexActivity;
+import stan.store.demo.Controller.Main.MemberActivity;
 import stan.store.demo.R;
 
 public class GCMD {
@@ -24,6 +28,34 @@ public class GCMD {
         public final String Product = "product";
         public final String User = "user";
     }
+
+
+    public enum Main_Type {
+        product,cart,member
+    }
+
+    ///--Check action to activity
+    public void Get_Icon_Act (Activity Source_Act,Main_Type Type){
+        Intent intent = new Intent();
+        switch (Type){
+            case product:
+                intent.setClass(Source_Act, IndexActivity.class);
+                break;
+            case cart:
+                intent.setClass(Source_Act, CartActivity.class);
+                break;
+            case member:
+                intent.setClass(Source_Act, MemberActivity.class);
+                break;
+            default:
+                break;
+        }
+        Source_Act.startActivity(intent);
+        Source_Act.finish();
+    }
+
+
+    ////------Statusbar
 
     public void SetActionBar(Activity Acttmp){
         Acttmp.requestWindowFeature(Window.FEATURE_NO_TITLE);

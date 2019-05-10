@@ -31,7 +31,8 @@ public class SQLiteHelper {
                 "password VARCHAR(50), "+
                 "name VARCHAR(50), " +    //姓名欄位
                 "phone VARCHAR(50), " +    //電話欄位
-                "email VARCHAR(50)) ";    //密碼欄位
+                "email VARCHAR(50)," +
+                "address VARCHAR(50)) ";
         db.execSQL(SQL_UserTable);    // 建立資料表
 
 

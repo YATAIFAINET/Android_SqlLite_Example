@@ -32,6 +32,7 @@ public class Adapter_Product extends RecyclerView.Adapter<Adapter_Product.ViewHo
         //宣告View底家
         View view = LayoutInflater.from(mContext).inflate(R.layout.item_product, parent, false);
         ViewHolder holder = new ViewHolder(view);
+        holder.mProduct_Img = (ImageView)view.findViewById(R.id.Product_Img);
         holder.mTextView_ProductName = (TextView) view.findViewById(R.id.textView_ProductName);
         holder.mTextView_ProductPrice = (TextView) view.findViewById(R.id.textView_ProductPrice);
         holder.mtextView_ProductExplain = (TextView)view.findViewById(R.id.textView_ProductExplain);
@@ -48,6 +49,35 @@ public class Adapter_Product extends RecyclerView.Adapter<Adapter_Product.ViewHo
                 
             }
         });
+        switch (position){
+            case 0:
+                holder.mProduct_Img.setImageResource(R.drawable.product);
+                break;
+            case 1:
+                holder.mProduct_Img.setImageResource(R.drawable.products1);
+                break;
+            case 2:
+                holder.mProduct_Img.setImageResource(R.drawable.products2);
+                break;
+            case 3:
+                holder.mProduct_Img.setImageResource(R.drawable.products3);
+                break;
+            case 4:
+                holder.mProduct_Img.setImageResource(R.drawable.products4);
+                break;
+            case 5:
+                holder.mProduct_Img.setImageResource(R.drawable.products5);
+                break;
+            case 6:
+                holder.mProduct_Img.setImageResource(R.drawable.products6);
+                break;
+            case 7:
+                holder.mProduct_Img.setImageResource(R.drawable.products7);
+                break;
+            default:
+                holder.mProduct_Img.setImageResource(R.drawable.photo);
+                break;
+        }
         holder.mTextView_ProductName.setText(mProduct.getName(position));
         holder.mTextView_ProductPrice.setText("$" + mProduct.getPrice(position));
         holder.mtextView_ProductExplain.setText(mProduct.getExplain(position));
@@ -59,6 +89,7 @@ public class Adapter_Product extends RecyclerView.Adapter<Adapter_Product.ViewHo
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
+        public ImageView mProduct_Img;
         public TextView mTextView_ProductName;
         public TextView mTextView_ProductPrice;
         public TextView mtextView_ProductExplain;

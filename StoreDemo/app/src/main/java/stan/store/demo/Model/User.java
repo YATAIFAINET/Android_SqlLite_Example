@@ -15,6 +15,7 @@ public class User {
     final String NAME = "name";
     final String PHONE = "phone";
     final String EMAIL = "email";
+    final String ADDRESS = "address";
     private GCMD mGCMD_LIB = new GCMD();
 
     //User的資料
@@ -48,6 +49,9 @@ public class User {
     }
     public String getEmail(){
         return mHashMap_Data.get(EMAIL);
+    }
+    public String getAddress(){
+        return mHashMap_Data.get(ADDRESS);
     }
 
     public void Check_Data (SQLiteHelper Source){

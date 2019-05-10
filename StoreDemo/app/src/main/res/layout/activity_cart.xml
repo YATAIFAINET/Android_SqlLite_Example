@@ -29,17 +29,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:textColor="@color/Background_Normal"
-                android:text="商品列表"
+                android:text="購物車"
                 android:textSize="15dp"
                 android:layout_gravity="center" />
         </LinearLayout>
     </FrameLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <LinearLayout
         android:id="@+id/RecyclerView_Product"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="9"/>
+        android:layout_weight="9"
+        android:orientation="vertical">
+
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -59,7 +62,7 @@
                     android:layout_height="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/icon_list"/>
+                    android:background="@drawable/icon_list_gray"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -67,7 +70,7 @@
                     android:textSize="12dp"
                     android:gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:textColor="@color/Background_Normal"
+                    android:textColor="@color/Icon_Un_Select_Color"
                     android:text="商品列表"/>
             </LinearLayout>
             <LinearLayout
@@ -82,7 +85,7 @@
                     android:layout_height="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/icon_cart_gray"/>
+                    android:background="@drawable/icon_cart"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -90,7 +93,7 @@
                     android:textSize="12dp"
                     android:gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:textColor="@color/Icon_Un_Select_Color"
+                    android:textColor="@color/Background_Normal"
                     android:text="購物車"/>
             </LinearLayout>
             <LinearLayout

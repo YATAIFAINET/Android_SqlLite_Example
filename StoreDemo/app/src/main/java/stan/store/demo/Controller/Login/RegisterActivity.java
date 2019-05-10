@@ -23,7 +23,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     //UI
     private ImageView mRegister_Back_Arrow;
-    private EditText mRegister_EditText_Account,mRegister_EditText_Password,mRegister_EditText_Name, mRegister_EditText_Phone,mRegister_EditText_Email;
+    private EditText mRegister_EditText_Account,mRegister_EditText_Password,
+                     mRegister_EditText_Name, mRegister_EditText_Phone
+                     ,mRegister_EditText_Email,mRegister_EditText_Address;
     private Button mRegister_Button_Register;
 
     //DB
@@ -52,6 +54,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         mRegister_EditText_Name = (EditText) findViewById(R.id.Register_EditText_Name);
         mRegister_EditText_Phone = (EditText) findViewById(R.id.Register_EditText_Phone);
         mRegister_EditText_Email = (EditText) findViewById(R.id.Register_EditText_Email);
+        mRegister_EditText_Address = (EditText)findViewById(R.id.Register_EditText_Address);
 
         mRegister_Button_Register = (Button) findViewById(R.id.Register_Button_Save);
         mRegister_Button_Register.setOnClickListener(this);
@@ -66,6 +69,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String name = mRegister_EditText_Name.getText().toString();
         String phone = mRegister_EditText_Phone.getText().toString();
         String email = mRegister_EditText_Email.getText().toString();
+        String Address = mRegister_EditText_Address.getText().toString();
 
         String Error_Msg = "";
 
@@ -84,6 +88,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         if(email.trim().equals("")){
             Error_Msg = Error_Msg+"email ";
         }
+        if(Address.trim().equals("")){
+            Error_Msg = Error_Msg+"地址 ";
+        }
 
         if(!Error_Msg.equals("")){
             Error_Msg = Error_Msg+"未輸入 請確認";
@@ -95,6 +102,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             tmpMap.put("name",name);
             tmpMap.put("phone",phone);
             tmpMap.put("email",email);
+            tmpMap.put("address",Address);
             if (mDBHelper.addData("user", tmpMap)) {
                 Toast.makeText(RegisterActivity.this, "註冊成功", Toast.LENGTH_SHORT).show();
                 finish();
